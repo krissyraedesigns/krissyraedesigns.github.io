@@ -3,50 +3,220 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Krissy Rae — Projects</title>
-  <link rel="stylesheet" href="projects.css" />
-  <link rel="stylesheet" href="https://use.typekit.net/wek7hot.css">
+  <title>Projects — Krissy Rae</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <nav class="terminal-nav">
-  <div class="nav-logo"><img class="logo" src="img/logo.png"></div>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="bio.html">Bio</a></li>
-        <li><a href="projects.html">Projects</a></li>
-    <li><a href="shop.html">Shop</a></li>
-     <li><a href="contact.html">Contact</a></li>
 
-  </ul>
+ <!-- Start Menu Trigger (Taskbar) -->
+<nav class="taskbar">
+  <div class="taskbar-left">
+    <button class="start-button" id="startBtn">
+      <img src="img/logo.png" alt="Start Logo" />
+    </button>
+    <input type="text" placeholder="Search projects..." class="taskbar-search" />
+  </div>
+
+  <div class="taskbar-right">
+    <div class="taskbar-clock" id="taskbarTime">00:00</div>
+    <div class="taskbar-date" id="taskbarDate">Jan 01</div>
+  </div>
 </nav>
 
-<header><h1>Projects</h1></header>
+<div class="start-menu" id="startMenu">
+  <ul>
+    <li><a href="index.html"><i class="fas fa-house"></i> Home</a></li>
+    <li><a href="bio.html"><i class="fas fa-user"></i> About</a></li>
+    <li><a href="projects.html"><i class="fas fa-folder-open"></i> Projects</a></li>
+    <li><a href="shop.html"><i class="fas fa-cart-shopping"></i> Shop</a></li>
+    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+  </ul>
+</div>
 
-
-  <div class="masonry">
-    <div class="masonry-item"><img src="img/africa.jpg" alt="Project 1" />
-         <div class="terminal-overlay">
-        <p>C:\Users\Krissy\Projects\Publication\Magazine\GuardiansOfAfrica.jpg</p>
-      </div></div>
-    <div class="masonry-item"><img src="img/brsscover2.jpg" alt="Project 2" /><div class="terminal-overlay">
-        <p>C:\Users\Krissy\Projects\Branding\BlueRockiesSilverStudio.jpg</p>
-      </div></div>
-    <div class="masonry-item"><img src="img/p!nkposter.jpg" alt="Project 3" />     <div class="terminal-overlay">
-        <p>C:\Users\Krissy\Projects\Illustration\Poster\P!NkPoster.jpg</p>
-      </div></div>
-    <div class="masonry-item"><img src="img/i93.jpg" alt="Project 4" />     <div class="terminal-overlay">
-        <p>C:\Users\Krissy\Projects\Branding\Instinct9.jpg</p>
-      </div></div>
-    <div class="masonry-item"><img src="img/mwl&bcover2.jpg" alt="Project 5" />     <div class="terminal-overlay">
-        <p>C:\Users\Krissy\Projects\Branding\MadeWithLove&Butter.jpg</p>
-      </div></div>
-    <div class="masonry-item"><img src="img/zoesmarketing.jpg" alt="Project 6" />     <div class="terminal-overlay">
-        <p>C:\Users\Krissy\Projects\Advertising\ZoesAnimalRescue.jpg</p>
-      </div></div>
+  <div class="explorer-window">
+    <div class="explorer-header">
+      <span><i class="fas fa-folder"></i> Projects</span>
+    </div>
+    <div class="explorer-toolbar">
+      <button><i class="fas fa-arrow-left"></i></button>
+      <button><i class="fas fa-arrow-right"></i></button>
+      <button><i class="fas fa-arrow-up"></i></button>
+      <input type="text" value="C:/Users/Krissy/Projects" readonly>
+    </div>
+  <div class="gallery-grid">
+<a href=bluerockiessilverstudio.html><div class="gallery-item">
+  <img class="primary-img" src="img/brsscover2.webp" alt="bluerockiessilverstudio" />
+  <img class="secondary-img" src="img/brsspixel.webp" alt="bluerockiessilverstudiopixelated" />
+</div></a>
+<!-- Repeat for each branding project -->
+<a href=instinct9.html><div class="gallery-item">
+  <img class="primary-img" src="img/i93.webp" alt="instinct9" />
+  <img class="secondary-img" src="img/i9pixel.webp" alt="instinct9pixelated" />
+</div>
+<!-- Repeat for each branding project -->
+    <a href=guardiansofafrica.html><div class="gallery-item">
+  <img class="primary-img" src="img/africa.webp" alt="guardiansofafrica 1" />
+  <img class="secondary-img" src="img/goapixel.webp" alt="guardiansofafricapixelated" />
+</div>
+<!-- Repeat for each branding project -->
+<a href=madewithloveandbutter.html><div class="gallery-item">
+  <img class="primary-img" src="img/mwl&bcover2.webp" alt="madewithloveandbutter" />
+  <img class="secondary-img" src="img/mwlpixel.webp" alt="madewithloveandbutterpixelated" />
+</div>
+<a href=p!nkposter.html><div class="gallery-item">
+  <img class="primary-img" src="img/p!nkposter.webp" alt="p!nkposter" />
+  <img class="secondary-img" src="img/pinkpixel.webp" alt="p!nkposter" />
+  </div>
+ <a href=zoesanimalrescue.html> <div class="gallery-item">
+  <img class="primary-img" src="img/zoes.webp" alt="zoesanimalrescue" />
+  <img class="secondary-img" src="img/zoespixel.webp" alt="zoesanimalrescuepixelated" />
+</div>
+  </div>
+</div>
+    </div>
   </div>
 
 
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="script.js"></script>
+<!-- Calendar Modal -->
+<div id="calendarModal">
+  <div class="calendar-nav">
+    <button id="prevMonth">&lt;</button>
+    <h3 id="calendarMonth">Month</h3>
+    <button id="nextMonth">&gt;</button>
+  </div>
+  <div id="calendarWeekdays">
+    <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+  </div>
+  <div id="calendarBody"></div>
+</div>
+
+
+<script>
+// Toggle Start Menu
+const startBtn = document.getElementById('startBtn');
+const startMenu = document.getElementById('startMenu');
+
+startBtn.addEventListener('click', () => {
+  startMenu.style.display = startMenu.style.display === 'block' ? 'none' : 'block';
+});
+
+document.addEventListener('click', (e) => {
+  if (!startBtn.contains(e.target) && !startMenu.contains(e.target)) {
+    startMenu.style.display = 'none';
+  }
+});
+
+// Live Clock + Date
+function updateClock() {
+  const now = new Date();
+  const hours = now.getHours().toString().padStart(2, '0');
+  const mins = now.getMinutes().toString().padStart(2, '0');
+  const day = now.toLocaleDateString('en-US', { month: 'short', day: '2-digit' });
+
+  document.getElementById('taskbarTime').textContent = `${hours}:${mins}`;
+  document.getElementById('taskbarDate').textContent = day;
+}
+updateClock();
+setInterval(updateClock, 60000);
+
+// Calendar Modal Toggle
+const calendarTrigger = document.getElementById('taskbarDate');
+const calendarModal = document.getElementById('calendarModal');
+
+calendarTrigger.style.cursor = 'pointer';
+calendarTrigger.addEventListener('click', (e) => {
+  e.stopPropagation();
+  calendarModal.style.display = calendarModal.style.display === 'block' ? 'none' : 'block';
+});
+
+document.addEventListener('click', (e) => {
+  if (!calendarModal.contains(e.target) && !calendarTrigger.contains(e.target)) {
+    calendarModal.style.display = 'none';
+  }
+});
+
+// Calendar Navigation
+let currentMonth = new Date().getMonth();
+let currentYear = new Date().getFullYear();
+
+const prevMonthBtn = document.getElementById('prevMonth');
+const nextMonthBtn = document.getElementById('nextMonth');
+const monthLabel = document.getElementById('calendarMonth');
+
+if (prevMonthBtn && nextMonthBtn) {
+  prevMonthBtn.addEventListener('click', () => {
+    currentMonth--;
+    if (currentMonth < 0) {
+      currentMonth = 11;
+      currentYear--;
+    }
+    renderCalendar(currentYear, currentMonth);
+  });
+
+  nextMonthBtn.addEventListener('click', () => {
+    currentMonth++;
+    if (currentMonth > 11) {
+      currentMonth = 0;
+      currentYear++;
+    }
+    renderCalendar(currentYear, currentMonth);
+  });
+}
+
+// Calendar Projects
+const projects = [
+  { title: "Brand Launch", date: "2024-10-04", link: "branding.html", type: "branding" },
+  { title: "Site Redesign", date: "2024-11-18", link: "web.html", type: "web" },
+  { title: "Poster Series", date: "2024-12-01", link: "illustration.html", type: "illustration" },
+  { title: "Magazine Layout", date: "2025-01-12", link: "publications.html", type: "publications" }
+];
+
+function renderCalendar(year, month) {
+  const container = document.getElementById('calendarBody');
+  const weekdays = document.getElementById('calendarWeekdays');
+
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const firstDay = new Date(year, month, 1).getDay();
+
+  const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  monthLabel.textContent = `${monthNames[month]} ${year}`;
+
+  container.innerHTML = '';
+
+  for (let i = 0; i < firstDay; i++) {
+    const blank = document.createElement('div');
+    blank.classList.add('calendar-day', 'blank');
+    container.appendChild(blank);
+  }
+
+  for (let day = 1; day <= daysInMonth; day++) {
+    const dateStr = `${year}-${(month + 1).toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+    const dayBox = document.createElement('div');
+    dayBox.classList.add('calendar-day');
+    dayBox.textContent = day;
+
+    const today = new Date();
+    if (year === today.getFullYear() && month === today.getMonth() && day === today.getDate()) {
+      dayBox.classList.add('calendar-today');
+    }
+
+    projects.forEach(project => {
+      if (project.date === dateStr) {
+        const event = document.createElement('a');
+        event.classList.add('calendar-event', `type-${project.type}`);
+        event.href = project.link;
+        event.textContent = project.title;
+        dayBox.appendChild(event);
+      }
+    });
+
+    container.appendChild(dayBox);
+  }
+}
+
+renderCalendar(currentYear, currentMonth);
+</script>
 </body>
 </html>
