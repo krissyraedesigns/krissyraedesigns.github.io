@@ -1,0 +1,110 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000000;
+  font-family: gotham, sans-serif;
+  color: white;
+}
+
+h1{
+    font-size: 2em;
+  font-family: dm-sans-36pt, sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+a {
+    color: white;
+        text-decoration: none;
+}
+
+a:hover {
+    color: white;
+    opacity: 75%;
+    text-decoration: none;
+}
+.video-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+}
+
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+
+}
+
+.side-button {
+  position: fixed;
+  padding: 12px 20px;
+  background-color: #181818;
+  font-size: 16px;
+  text-transform: uppercase;
+  border: 2px solid white;
+  cursor: pointer;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s;
+}
+
+.side-button:hover {
+  background-color: #333;
+}
+
+/* Side (original) buttons */
+.side-button.left {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  border-radius: 0 8px 8px 0;
+  justify-content: flex-start;
+}
+
+.side-button.right {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  border-radius: 8px 0 0 8px;
+  justify-content: flex-end;
+}
+
+/* Corners */
+.top-left {
+  top: 0;
+  left: 0;
+  border-radius: 0 0 8px 0;
+}
+
+.top-right {
+  top: 0;
+  right: 0;
+  border-radius: 0 0 0 8px;
+}
+
+.bottom-left {
+  bottom: 0;
+  left: 0;
+  border-radius: 0 8px 0 0;
+}
+
+.bottom-right {
+  bottom: 0;
+  right: 0;
+  border-radius: 8px 0 0 0;
+}
