@@ -1,20 +1,149 @@
-$(document).ready(function () {
-  const $galleryTrack = $('#galleryTrack');
-  const $items = $galleryTrack.children();
-  const itemWidth = 500; // width + spacing buffer
-  let currentIndex = 0;
-  const maxIndex = $items.length;
 
-  function scrollGallery(direction) {
-    currentIndex = (currentIndex + direction + maxIndex) % maxIndex;
-    $galleryTrack.css('transform', `translateX(-${currentIndex * itemWidth}px)`);
+// Calendar events
+const projects = [
+  { title: "Brand Launch", date: "2022-07-01", link: "bio.html", type: "branding" },
+  { title: "Blue Rockies Silver Studio Brand Identity Project", date: "2024-09-20", link: "bluerockiessilverstudio.html", type: "branding" },
+  { title: "Instinct 9 Energy Drink", date: "2024-12-21", link: "instinct9.html", type: "branding" },
+  { title: "Guardians of Africa", date: "2025-01-12", link: "guardiansofafrica.html", type: "publications" },
+  { title: "P!NK Summer Carnival Poster", date: "2025-02-02", link: "p!nkposter.html", type: "Illustrationss" },
+        { title: "Made Wtih Love & Butter", date: "2025-03-25", link: "madewithloveandbutter.html", type: "branding" },
+      { title: "Zoe's Animal Rescue", date: "2025-05-13", link: "zoesanimalrescue.html", type: "advertising" },
+      
+];
+
+// Toggle Start Menu
+const startBtn = document.getElementById('startBtn');
+const startMenu = document.getElementById('startMenu');
+
+startBtn.addEventListener('click', () => {
+  startMenu.style.display = startMenu.style.display === 'block' ? 'none' : 'block';
+});
+
+document.addEventListener('click', (e) => {
+  if (!startBtn.contains(e.target) && !startMenu.contains(e.target)) {
+    startMenu.style.display = 'none';
   }
+});
 
-  $('.nav-button.left').on('click', function () {
-    scrollGallery(-1);
+// Live Clock + Date
+function updateClock() {
+  const now = new Date();
+  const hours = now.getHours().toString().padStart(2, '0');
+  const mins = now.getMinutes().toString().padStart(2, '0');
+  const day = now.toLocaleDateString('en-US', { month: 'short', day: '2-digit' });
+
+  document.getElementById('taskbarTime').textContent = `${hours}:${mins}`;
+  document.getElementById('taskbarDate').textContent = day;
+}
+updateClock();
+setInterval(updateClock, 60000);
+
+// Calendar Modal Toggle
+const calendarTrigger = document.getElementById('taskbarDate');
+const calendarModal = document.getElementById('calendarModal');
+
+calendarTrigger.style.cursor = 'pointer';
+calendarTrigger.addEventListener('click', (e) => {
+  e.stopPropagation();
+  calendarModal.style.display = calendarModal.style.display === 'block' ? 'none' : 'block';
+});
+
+document.addEventListener('click', (e) => {
+  if (!calendarModal.contains(e.target) && !calendarTrigger.contains(e.target)) {
+    calendarModal.style.display = 'none';
+  }
+});
+
+// Calendar Navigation
+let currentMonth = new Date().getMonth();
+let currentYear = new Date().getFullYear();
+
+const prevMonthBtn = document.getElementById('prevMonth');
+const nextMonthBtn = document.getElementById('nextMonth');
+const monthLabel = document.getElementById('calendarMonth');
+
+if (prevMonthBtn && nextMonthBtn) {
+  prevMonthBtn.addEventListener('click', () => {
+    currentMonth--;
+    if (currentMonth < 0) {
+      currentMonth = 11;
+      currentYear--;
+    }
+    renderCalendar(currentYear, currentMonth);
   });
 
-  $('.nav-button.right').on('click', function () {
-    scrollGallery(1);
+  nextMonthBtn.addEventListener('click', () => {
+    currentMonth++;
+    if (currentMonth > 11) {
+      currentMonth = 0;
+      currentYear++;
+    }
+    renderCalendar(currentYear, currentMonth);
+  });
+}
+
+
+
+function renderCalendar(year, month) {
+  const container = document.getElementById('calendarBody');
+  const weekdays = document.getElementById('calendarWeekdays');
+
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const firstDay = new Date(year, month, 1).getDay();
+
+  const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  monthLabel.textContent = `${monthNames[month]} ${year}`;
+
+  container.innerHTML = '';
+
+  for (let i = 0; i < firstDay; i++) {
+    const blank = document.createElement('div');
+    blank.classList.add('calendar-day', 'blank');
+    container.appendChild(blank);
+  }
+
+  for (let day = 1; day <= daysInMonth; day++) {
+    const dateStr = `${year}-${(month + 1).toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+    const dayBox = document.createElement('div');
+    dayBox.classList.add('calendar-day');
+    dayBox.textContent = day;
+
+    const today = new Date();
+    if (year === today.getFullYear() && month === today.getMonth() && day === today.getDate()) {
+      dayBox.classList.add('calendar-today');
+    }
+
+    projects.forEach(project => {
+      if (project.date === dateStr) {
+        const event = document.createElement('a');
+        event.classList.add('calendar-event', `type-${project.type}`);
+        event.href = project.link;
+        event.textContent = project.title;
+        dayBox.appendChild(event);
+      }
+    });
+
+    container.appendChild(dayBox);
+  }
+}
+
+renderCalendar(currentYear, currentMonth);
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.file-tree li').forEach(item => {
+    item.addEventListener('click', function() {
+      // Remove 'active' from all, add to clicked
+      document.querySelectorAll('.file-tree li').forEach(li => li.classList.remove('active'));
+      this.classList.add('active');
+      const filter = this.getAttribute('data-filter');
+      // Show/hide gallery items
+      document.querySelectorAll('.gallery-item').forEach(card => {
+        if (filter === 'all' || card.classList.contains('type-' + filter)) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
   });
 });
