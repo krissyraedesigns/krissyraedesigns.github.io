@@ -6,7 +6,18 @@ body {
 
 }
  
- 
+ *, *::before, *::after {
+  box-sizing: border-box;
+}
+
+   a {
+    text-decoration: none;
+    color: white;
+  }
+
+a:hover {
+  opacity: 0.7;
+}
 
 h1{
     font-size: 2em;
@@ -15,535 +26,27 @@ h1{
   padding: 20px;
 }
 
+h2 {
+  padding-top: -10px;
+
+}
 h3 {
      font-size: 0.875em;
-     font-style: strong;
+     font-style: bold;
 }
 
-/*taskbar*/
-
-    .taskbar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: #000;
-    border-top: 1px solid #333;
-    padding: 0.5rem 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-   
-    }
-
-
-    .taskbar-left {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    }
-
-
-    .start-button {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    }
-
-
-    .start-button img {
-    height: 36px;
-    width: auto;
-    }
-
-
-    .taskbar-search {
-    background-color: #111;
-    color: #fff;
-    border: 1px solid #444;
-    padding: 0.4rem 1rem;
-    border-radius: 4px;
-    width: 220px;
-    }
-
-
-    .taskbar-search::placeholder {
-    color: #999;
-    }
-
-
-
-    .taskbar-right {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    color: #ccc;
-    margin-right: 40px;
-    }
-
-
-
-
-
-/* Start Menu */
-    .start-menu {
-    position: fixed;
-    bottom: 60px;
-    left: 10px;
-    background: #111;
-    border: 1px solid #444;
-    padding: 1rem;
-    display: none;
-    z-index: 999;
-    width: 200px;
-    }
-
-
-    .start-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    }
-
-
-    .start-menu ul li {
-    margin-bottom: 1rem;
-    }
-
-
-    .start-menu ul li a {
-    color: #fff;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    }
-
-
-    .start-menu ul li a i {
-    min-width: 16px;
-    text-align: center;
-    }
-
-
-    .start-menu ul li a:hover {
-    color: #ccc;
-    }
-
-
-/*folders*/
-    .desktop {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2rem;
-    padding: 2rem;
-    max-width: 200px;
-    }
-
-
-    .folder {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 120px; /* sets consistent folder width */
-    text-decoration: none;
-    color: #fff;
-    transition: transform 0.2s ease;
-    text-align: center;
-    }
-
-
-    .folder img {
-    width: 64px;
-    height: auto;
-    filter: brightness(0.85);
-    }
-
-
-    .folder span {
-    margin-top: 0.5rem;
-    color: #ccc;
-    word-wrap: break-word;
-    max-width: 100%;
-    line-height: 1.2;
-    }
-
-
-    .folder:hover {
-    transform: scale(1.05);
-    color: #fff;
-    }
-
-/* calendar */
-    #calendarModal {
-    position: fixed;
-    bottom: 70px;
-    right: 20px;
-    background: #111;
-    border: 1px solid #444;
-    padding: 1rem;
-    z-index: 999;
-    width: 420px;
-    color: #fff;
-    display: none;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.7);
-    border-radius: 8px;
-    }
-
-
-    #calendarModal h3 {
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    text-align: center;
-    color: #fff;
-    }
-
-
-    .calendar-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.5rem;
-    color: #ccc;
-    padding: 0 4px;
-    }
-
-
-    .calendar-nav button {
-    background: #222;
-    color: #ccc;
-    border: 1px solid #444;
-    padding: 4px 8px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: 0.3s;
-    }
-
-
-    .calendar-nav button:hover {
-    background: #444;
-    color: #fff;
-    }
-
-
-    #calendarWeekdays {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    margin-bottom: 4px;
-    color: #aaa;
-    text-align: center;
-    padding: 0 4px;
-    }
-
-
-    #calendarBody {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 4px;
-    padding: 0 4px;
-    }
-
-
-    .calendar-day {
-    background: #1a1a1a;
-    border: 1px solid #333;
-    aspect-ratio: 1 / 1;
-    position: relative;
-    padding: 4px;
-    color: #ccc;
-    border-radius: 4px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 4px;
-    }
-
-
-    .calendar-day.blank {
-    background: transparent;
-    border: none;
-    }
-
-
-    .calendar-event {
-    background: #2e2e2e;
-    color: #fff;
-    text-decoration: none;
-    padding: 2px 4px;
-    border-radius: 3px;
-    line-height: 1.3;
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    transition: background 0.2s;
-    }
-
-
-    .calendar-event:hover {
-    background: #666;
-    color: #fff;
-    }
-
-
-    .calendar-today {
-    border: 1px solid #888;
-    background: #222;
-    }
-
-
-
-
-
-
-
-/* Contact Form*/
-.contact-shell {
-    padding: 0 300px;
-    margin-top: 100px;
-    background-color: #000000;
-    color: #ffffff;
-    font-family: 'Gotham', sans-serif;
-
+body, html {
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
-
-.contact-grid {
-    display: flex;
-    flex-direction: row; /* Align items horizontally */
-    gap: 100px; /* Space between the form and description */
-    justify-content: center; /* Center the content horizontally */
-    align-items: flex-start; /* Align items at the top */
+.frame {
+  overflow-x: hidden;
 }
 
-.contact-form {
-    flex: 1; /* Allow the form to take up available space */
-}
+/* Index */
 
-.contact-description {
-    flex: 1; /* Allow the description to take up available space */
-    max-width: 100%; /* Optional: Limit the width of the description */
-    width: 400px;
-    text-align: left; /* Align text to the left */
-    line-height: 1.9;
-}
-
-    /* Terminal-style frame */
-    .terminal-frame {
-    background-color: #000;
-    border: 2px solid #ffffff;
-    padding: 2rem;
-    border-radius: 4px;
-    }
-
-
-    .terminal-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-    }
-
-
-    .terminal-header .dot {
-    height: 12px;
-    width: 12px;
-    border-radius: 50%;
-    margin-right: 6px;
-    display: inline-block;
-    }
-
-
-    .dot.red { background: #ff5f56; }
-    .dot.yellow { background: #ffbd2e; }
-
-    .dot.green { background: #27c93f; }
-
-    .terminal-title {
-    margin-left: auto;
-    color: #888;
-    }
-.contact-form {
-    flex: 1; /* Allow the form to take up available space */
-    display: flex; /* Enable flexbox */
-    flex-direction: column; /* Stack the form elements vertically */
-    justify-content: center; /* Center the content vertically */
-    align-items: center; /* Center the content horizontally */
-    gap: 1rem; /* Add spacing between form elements */
-}
-
-    /* Contact form styling */
-    .contact-form label {
-    display: block;
-    margin: 1rem 0 0.5rem;
-    width: 800px;
-  
-    }
-
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 0.7rem; /* Increase padding for taller input boxes */
-    background-color: #111;
-    border: 1px solid #ffffff;
-    color: #ffffff;
-    font-family: inherit;
-    resize: vertical;
-
-
-}
-
-#message {
-    height: 200px; /* Set a specific height for input boxes */
-}
-
-    .contact-form button {
-    margin-top: 1.5rem;
-    padding: 0.75rem 1.5rem;
-    background-color: transparent;
-    color: #ffffff;
-    border: 2px solid #ffffff;
-    font-family: inherit;
-    cursor: pointer;
-    transition: 0.3s ease;
-    }
-
-
-    .contact-form button:hover {
-    background-color: #ffffff;
-    color: #000;
-    }
-
-
-    .hidden {
-    display: none;
-    }
-
-
-    #thankYouMessage {
-    margin-top: 1rem;
-    color: #ffffff;
-    font-style: italic;
-    }
-
-
-
-    .contact-description a {
-    color: #ffffff;
-    text-decoration: underline;
-    
-    }
-
-/* File Explorer Styled in Black/White/Grey Palette */
-    a {
-    text-decoration: none;
-    color: inherit;
-    }
-
-    .explorer-window {
-    width: 1200px;
-    margin: 3rem auto;
-    border: 1px solid #444;
-
-    background: #1f1f1f;
-    }
-
-
-    .explorer-header {
-    background: linear-gradient(to bottom, #2a2a2a, #1f1f1f);
-    padding: 0.75rem 1rem;
-    border-bottom: 1px solid #333;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: #fff;
-    }
-
-
-    .explorer-toolbar {
-    background: #262626;
-    padding: 0.5rem;
-    border-bottom: 1px solid #333;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    }
-
-
-    .explorer-toolbar button {
-    background: #1a1a1a;
-    border: 1px solid #555;
-    padding: 0.25rem 0.5rem;
-    cursor: pointer;
-    color: #ccc;
-    transition: background 0.2s;
-    }
-
-
-    .explorer-toolbar button:hover {
-    background: #333;
-    }
-
-
-    .explorer-toolbar input[type="text"] {
-    flex: 1;
-    padding: 0.4rem;
-    border: 1px solid #444;
-    background: #121212;
-    color: #ccc;
-    }
-
-
-    .explorer-body {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    padding: 1.5rem;
-    background: #1a1a1a;
-    }
-
-
-    .file-icon {
-    width: 100px;
-    text-align: center;
-    cursor: pointer;
-    color: #ccc;
-    transition: transform 0.2s ease;
-    }
-
-
-    .file-icon i {
-    font-size: 42px;
-    color: #bbb;
-    }
-
-
-    .file-icon span {
-    display: block;
-    margin-top: 0.5rem;
-    color: #ccc;
-    }
-
-
-    .file-icon:hover {
-    transform: scale(1.05);
-    color: #fff;
-
-    }
-/* landing page */
-
-    .bottom-left:hover {
-        color: white;
-        opacity: 75%;
-        text-decoration: none;
-    }
-
-    .video-wrapper {
+  .video-wrapper {
     position: fixed;
     top: 0;
     left: 0;
@@ -553,7 +56,7 @@ h3 {
     }
 
 
-    #background-video {
+  #background-video {
     position: fixed;
     top: 0;
     left: 0;
@@ -565,7 +68,7 @@ h3 {
     }
 
 
-    .side-button {
+  .side-button {
     position: fixed;
     padding: 12px 20px;
     background-color: #181818;
@@ -579,371 +82,348 @@ h3 {
     transition: background-color 0.3s;
     }
 
-
-    .side-button:hover {
-    background-color: #333;
+  .side-button.top-left {
+      top: 0;
+      left: 0;
+      border-radius: 0 8px 8px 0;
     }
 
-
-    /* Side (original) buttons */
-    .side-button.left {
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    border-radius: 0 8px 8px 0;
-    justify-content: flex-start;
+  .side-button.top-right {
+      top: 0;
+      right: 0;
+      border-radius: 8px 0 0 8px;
     }
 
-
-    .side-button.right {
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    justify-content: flex-end;
+  .side-button.bottom-left {
+      bottom: 0;
+      left: 0;
+      border-radius: 0 8px 0 8px;
     }
 
-
-    /* Corners */
-    .top-left {
-    top: 0;
-    left: 0;
+  .side-button.bottom-right {
+      bottom: 0;
+      right: 0;
+      border-radius: 8px 0 8px 0;
     }
 
+/* Projects */
+  /* Taskbar */
 
-    .top-right {
-    top: 0;
-    right: 0;
+      .taskbar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #000;
+      border-top: 1px solid #333;
+      padding: 0.5rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    
+      }
 
-    }
+
+      .taskbar-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      }
 
 
-    .bottom-left {
-    bottom: 0;
-    left: 0;
-    }
+      .start-button {
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      }
 
 
-    .bottom-right {
-    bottom: 0;
-    right: 0;
-    }
+      .start-button img {
+      height: 36px;
+      width: auto;
+      }
 
-.about-container {
+
+      .taskbar-search {
+      background-color: #111;
+      color: #fff;
+      border: 1px solid #444;
+      padding: 0.4rem 1rem;
+      border-radius: 4px;
+      width: 220px;
+      }
+
+
+      .taskbar-search::placeholder {
+      color: #999;
+      }
+
+
+
+      .taskbar-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: #ccc;
+      margin-right: 40px;
+      }
+
+
+
+
+
+  /* Start Menu */
+      .start-menu {
+      position: fixed;
+      bottom: 60px;
+      left: 10px;
+      background: #111;
+      border: 1px solid #444;
+      padding: 1rem;
+      display: none;
+      z-index: 999;
+      width: 200px;
+      }
+
+
+      .start-menu ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      }
+
+
+      .start-menu ul li {
+      margin-bottom: 1rem;
+      }
+
+
+      .start-menu ul li a {
+      color: #fff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      }
+
+
+      .start-menu ul li a i {
+      min-width: 16px;
+      text-align: center;
+      }
+
+
+      .start-menu ul li a:hover {
+      color: #ccc;
+      }
+
+
+
+
+  /* Calendar */
+
+
+
+
+
+      #calendarModal {
+      position: fixed;
+      bottom: 70px;
+      right: 20px;
+      background: #111;
+      border: 1px solid #444;
+      padding: 1rem;
+      z-index: 999;
+      width: 420px;
+      color: #fff;
+      display: none;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.7);
+      border-radius: 8px;
+      }
+
+
+      #calendarModal h3 {
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      text-align: center;
+      color: #fff;
+      }
+
+
+      .calendar-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+      color: #ccc;
+      padding: 0 4px;
+      }
+
+
+      .calendar-nav button {
+      background: #222;
+      color: #ccc;
+      border: 1px solid #444;
+      padding: 4px 8px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: 0.3s;
+      }
+
+
+      .calendar-nav button:hover {
+      background: #444;
+      color: #fff;
+      }
+
+
+      #calendarWeekdays {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      margin-bottom: 4px;
+      color: #aaa;
+      text-align: center;
+      padding: 0 4px;
+      }
+
+
+      #calendarBody {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+      padding: 0 4px;
+      }
+
+
+      .calendar-day {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      aspect-ratio: 1 / 1;
+      position: relative;
+      padding: 4px;
+      color: #ccc;
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 4px;
+      }
+
+
+      .calendar-day.blank {
+      background: transparent;
+      border: none;
+      }
+
+
+      .calendar-event {
+      background: #2e2e2e;
+      color: #fff;
+      text-decoration: none;
+      padding: 2px 4px;
+      border-radius: 3px;
+      line-height: 1.3;
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: background 0.2s;
+      }
+
+
+      .calendar-event:hover {
+      background: #666;
+      color: #fff;
+      }
+
+
+      .calendar-today {
+      border: 1px solid #888;
+      background: #222;
+      }
+
+
+
+
+
+
+
+ /* Frame */
+
+
+.frame {
+  width: 95%;
+  background: #1e1e1e;
+  border: 2px solid #444;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  color: #ddd;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 40px;
+}
+
+.window-bar {
   display: flex;
-  flex-direction: row; /* Align items horizontally */
-  gap: 2rem; /* Add space between the two sections */
-  width: 100%;
-  max-width: 1200px; /* Optional: Limit the overall width */
-  margin: 0 auto; /* Center the container */
-  padding: 2rem; /* Add padding around the container */
+  justify-content: space-between;
+  align-items: center;
+  background: #2a2a2a;
+  padding: 0.4rem 1rem;
+  border-bottom: 1px solid #444;
 }
 
-.about-gallery {
-  flex: 1; /* Take up 1/3 of the space */
-  display: flex;
-  flex-wrap: wrap; /* Allow images to wrap to the next line */
-  gap: 1rem; /* Add space between images */
-  justify-content: center; /* Center images horizontally */
-  align-items: center; /* Center images vertically */
+.window-bar .title {
+  font-size: 0.9rem;
 }
 
-.about-gallery img {
-  width: 100%;
-  max-width: 100px; /* Set a max width for each image */
-  border-radius: 8px; /* Optional: Add rounded corners */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
-}
-
-.about-text {
-  flex: 2; /* Take up 2/3 of the space */
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Center text vertically */
-  text-align: left; /* Align text to the left */
-  font-family: 'DM Sans', sans-serif; /* Optional: Use a clean font */
-  line-height: 1.6; /* Improve readability */
-}
-
-br {
-    margin: -50px;
-}
-
-.explorer-controls {
+.window-buttons {
   display: flex;
   gap: 8px;
-  align-items: center;
-  padding: 0.5rem 1rem 0.5rem 0.5rem;
-  background: #232323;
-  border-bottom: 1px solid #333;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
 }
 
-.explorer-btn {
-  width: 16px;
-  height: 16px;
+.win-btn {
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   border: none;
-  margin-right: 4px;
-  cursor: pointer;
-  transition: box-shadow 0.2s;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
-.explorer-btn.minimize { background: #fbbc05; }
-.explorer-btn.maximize { background: #34a853; }
-.explorer-btn.close    { background: #ea4335; }
+.win-btn.minimize { background: #fbbc05; }
+.win-btn.maximize { background: #34a853; }
+.win-btn.close    { background: #ea4335; }
 
-.explorer-btn:hover {
-  box-shadow: 0 0 0 2px #fff2, 0 1px 2px rgba(0,0,0,0.2);
-}
-
-
-.explorer-content {
+.menu-tabs {
   display: flex;
-}
-
-.file-tree {
-  width: 200px;
-  background: #232323;
-  border-right: 1px solid #333;
-  padding: 1rem 0.5rem;
-  min-height: 100%;
-}
-
-.file-tree ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.file-tree li {
-  color: #ccc;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background 0.2s, color 0.2s;
-}
-
-.file-tree li.active,
-.file-tree li:hover {
+  gap: 1.5rem;
+  padding: 0.6rem 1rem;
   background: #333;
-  color: #fff;
+  border-bottom: 1px solid #444;
 }
 
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
-  justify-items: center;
-  align-items: start;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.gallery-item {
-  width: 100%;
-  max-width: 240px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  padding: 1rem;
-  transition: box-shadow 0.2s;
-  box-sizing: border-box;
-}
-
-.image-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 220px;
-  height: 220px;
-  margin-bottom: 0.5rem;
-}
-
-.image-wrapper img {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: opacity 0.4s;
-}
-
-.gallery-item img {
-  width: 100%;
-  max-width: 220px;
-  object-fit: cover;
-  margin-bottom: 0.5rem;
-            text-align: center;
-      justify-items: center;
-      align-items: center;
-  
-}
-
-.project-title {
-  margin-top: 0.5rem;
-  font-style:strong;
-  color: #ffffff;
-  text-align: center;
-}
-
-.project-desc {
-  color: #777777;
-  text-align: center;
-}
-
-
-.gallery-item:hover {
-  transform: scale(1.02);
-}
-
-
-.primary-img {
-  z-index: 1;
-  opacity: 1;
-}
-
-.secondary-img {
-  z-index: 2;
-  opacity: 0;
-}
-
-.gallery-item:hover .primary-img {
-  opacity: 0;
-}
-
-.gallery-item:hover .secondary-img {
-  opacity: 1;
-}
-
-    /* Modal Styles */
-    .modal {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(0,0,0,0.9);
-    position: fixed;
-    inset: 0;
-    z-index: 999;
-    }
-
-    .modal.hidden {
-    display: none;
-    }
-
-    .modal-content {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 8px;
-    }
-
-    .close-modal {
-    position: absolute;
-    top: 30px;
-    right: 40px;
-    font-size: 2rem;
-    color: white;
-    cursor: pointer;
-    }
-
-    body {
-  margin: 0;
-  background: #1e1e1e;
-  font-family: 'Gotham', sans-serif;
+.menu-tab {
+  font-size: 0.9rem;
   color: #ccc;
 }
 
-.notepad-container {
-  width: 1400px; /* Slightly larger window */
-  max-height: 1000px;
-  margin: 2rem auto;
-  border: 1px solid #333;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  background: #252526;
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.notepad-header {
-  background: #2d2d30;
-  padding: 0.5rem 1rem;
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid #3c3c3c;
-}
-
-.tab {
-  background: #3e3e42;
-  border: 1px solid #555;
-  border-bottom: none;
-  padding: 0.4rem 1rem;
-  margin-right: 0.5rem;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-  color: #ddd;
-}
-
-.tab.active {
-  background: #252526;
+.menu-tab.active {
   font-weight: bold;
   color: #fff;
+  border-bottom: 2px solid #fff;
 }
 
-.notepad-body {
-  display: flex;
-  font-size: 11px;
-  line-height: 1.4;
-}
-
-.line-numbers {
-  background: #2a2a2a;
-  padding: 1rem 0.5rem;
-  color: #888;
-  border-right: 1px solid #444;
-  user-select: none;
-  flex-shrink: 0;
-}
-
-.line-numbers span {
-  display: block;
-  text-align: right;
-}
-
-.code-content {
-  padding: 1rem;
+.notes {
   background: #1e1e1e;
-  color: #ccc;
-  flex: 1;
-  white-space: pre-wrap;        /* Preserves formatting */
-  word-wrap: break-word;        /* Wraps long words */
-  overflow-wrap: break-word;    /* Ensures breaking happens */
-  box-sizing: border-box;
-}
+  border-top: 1px solid #444;
+padding: 10px;
+  color: #aaa;
+  font-size: 0.85rem;
+  font-style: italic;
+  height: 100px;
+  text-align: center;
+  box-shadow: inset 0 1px 0 #2d2d2d;
+  
 
-br.small-space {
-  line-height: 0.3; /* Reduce the height of the space */
-  display: block; /* Ensure the <br> behaves like a block element */
-}
-
-
-
-.primary-img {
-  z-index: 1;
-  opacity: 1;
-}
-
-.secondary-img {
-  z-index: 2;
-  opacity: 0;
-}
-
-.gallery-item:hover .primary-img {
-  opacity: 0;
-}
-
-.gallery-item:hover .secondary-img {
-  opacity: 1;
+  /* Fix layout */
+  display: block; /* change from flex to block */
 }

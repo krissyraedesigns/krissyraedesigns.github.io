@@ -1,0 +1,129 @@
+ /* Contact Form */
+    .contact-shell {
+      padding: 0 300px;
+      margin-top: 100px;
+      background-color: #000000;
+      color: #ffffff;
+      font-family: 'Gotham', sans-serif;
+    }
+
+
+    .contact-grid {
+      display: flex;
+      flex-direction: row; /* Align items horizontally */
+      gap: 100px; /* Space between the form and description */
+      justify-content: center; /* Center the content horizontally */
+      align-items: flex-start; /* Align items at the top */
+    }
+
+    .contact-form {
+      flex: 1; /* Allow the form to take up available space */
+    }
+
+    .contact-description {
+      flex: 1; /* Allow the description to take up available space */
+      max-width: 100%; /* Optional: Limit the width of the description */
+      width: 400px;
+      text-align: left; /* Align text to the left */
+      line-height: 1.9;
+    }
+
+    .terminal-frame {
+      background-color: #000;
+      border: 2px solid #ffffff;
+      padding: 2rem;
+      border-radius: 4px;
+    }
+
+
+    .terminal-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+
+    .terminal-header .dot {
+      height: 12px;
+      width: 12px;
+      border-radius: 50%;
+      margin-right: 6px;
+      display: inline-block;
+    }
+
+
+    .dot.red { background: #ff5f56; }
+    .dot.yellow { background: #ffbd2e; }
+    .dot.green { background: #27c93f; }
+
+    .terminal-title {
+      margin-left: auto;
+      color: #888;
+    }
+    
+    .contact-form {
+      flex: 1; /* Allow the form to take up available space */
+      display: flex; /* Enable flexbox */
+      flex-direction: column; /* Stack the form elements vertically */
+      justify-content: center; /* Center the content vertically */
+      align-items: center; /* Center the content horizontally */
+      gap: 1rem; /* Add spacing between form elements */
+    }
+
+      /* Contact form styling */
+    .contact-form label {
+      display: block;
+      margin: 1rem 0 0.5rem;
+      width: 800px;
+    
+    }
+
+
+    
+    .contact-form input,.contact-form textarea {
+      width: 100%;
+      padding: 0.7rem; /* Increase padding for taller input boxes */
+      background-color: #111;
+      border: 1px solid #ffffff;
+      color: #ffffff;
+      font-family: inherit;
+      resize: vertical;
+    }
+
+    #message {
+      height: 200px; /* Set a specific height for input boxes */
+    }
+
+    .contact-form button {
+        margin-top: 1.5rem;
+        padding: 0.75rem 1.5rem;
+        background-color: transparent;
+        color: #ffffff;
+        border: 2px solid #ffffff;
+        font-family: inherit;
+        cursor: pointer;
+        transition: 0.3s ease;
+      }
+
+    .contact-form button:hover {
+      background-color: #ffffff;
+      color: #000;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    #thankYouMessage {
+      margin-top: 1rem;
+      color: #ffffff;
+      font-style: italic;
+    }
+
+    .contact-description a {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+
+

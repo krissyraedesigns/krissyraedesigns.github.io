@@ -6,6 +6,7 @@
   <title>Projects — Krissy Rae</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+   <link rel="stylesheet" href="bio.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -34,6 +35,25 @@
     <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
   </ul>
 </div>
+
+
+<!-- Calendar Modal -->
+<div id="calendarModal">
+  <div class="calendar-nav">
+    <button id="prevMonth">&lt;</button>
+    <h3 id="calendarMonth">Month</h3>
+    <button id="nextMonth">&gt;</button>
+  </div>
+  <div id="calendarWeekdays">
+    <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+  </div>
+  <div id="calendarBody"></div>
+</div>
+
+
+
+
+
 
  <div class="notepad-container">
   <div class="notepad-header">
@@ -93,144 +113,7 @@ Feel free to reach out on my contact page.
   </div>
 </div>
 
-<!-- Calendar Modal -->
-<div id="calendarModal">
-  <div class="calendar-nav">
-    <button id="prevMonth">&lt;</button>
-    <h3 id="calendarMonth">Month</h3>
-    <button id="nextMonth">&gt;</button>
-  </div>
-  <div id="calendarWeekdays">
-    <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
-  </div>
-  <div id="calendarBody"></div>
-</div>
 
-
-<script>
-// Toggle Start Menu
-const startBtn = document.getElementById('startBtn');
-const startMenu = document.getElementById('startMenu');
-
-startBtn.addEventListener('click', () => {
-  startMenu.style.display = startMenu.style.display === 'block' ? 'none' : 'block';
-});
-
-document.addEventListener('click', (e) => {
-  if (!startBtn.contains(e.target) && !startMenu.contains(e.target)) {
-    startMenu.style.display = 'none';
-  }
-});
-
-// Live Clock + Date
-function updateClock() {
-  const now = new Date();
-  const hours = now.getHours().toString().padStart(2, '0');
-  const mins = now.getMinutes().toString().padStart(2, '0');
-  const day = now.toLocaleDateString('en-US', { month: 'short', day: '2-digit' });
-
-  document.getElementById('taskbarTime').textContent = `${hours}:${mins}`;
-  document.getElementById('taskbarDate').textContent = day;
-}
-updateClock();
-setInterval(updateClock, 60000);
-
-// Calendar Modal Toggle
-const calendarTrigger = document.getElementById('taskbarDate');
-const calendarModal = document.getElementById('calendarModal');
-
-calendarTrigger.style.cursor = 'pointer';
-calendarTrigger.addEventListener('click', (e) => {
-  e.stopPropagation();
-  calendarModal.style.display = calendarModal.style.display === 'block' ? 'none' : 'block';
-});
-
-document.addEventListener('click', (e) => {
-  if (!calendarModal.contains(e.target) && !calendarTrigger.contains(e.target)) {
-    calendarModal.style.display = 'none';
-  }
-});
-
-// Calendar Navigation
-let currentMonth = new Date().getMonth();
-let currentYear = new Date().getFullYear();
-
-const prevMonthBtn = document.getElementById('prevMonth');
-const nextMonthBtn = document.getElementById('nextMonth');
-const monthLabel = document.getElementById('calendarMonth');
-
-if (prevMonthBtn && nextMonthBtn) {
-  prevMonthBtn.addEventListener('click', () => {
-    currentMonth--;
-    if (currentMonth < 0) {
-      currentMonth = 11;
-      currentYear--;
-    }
-    renderCalendar(currentYear, currentMonth);
-  });
-
-  nextMonthBtn.addEventListener('click', () => {
-    currentMonth++;
-    if (currentMonth > 11) {
-      currentMonth = 0;
-      currentYear++;
-    }
-    renderCalendar(currentYear, currentMonth);
-  });
-}
-
-// Calendar Projects
-const projects = [
-  { title: "spanand Launch", date: "2024-10-04", link: "spananding.html", type: "spananding" },
-  { title: "Site Redesign", date: "2024-11-18", link: "web.html", type: "web" },
-  { title: "Poster Series", date: "2024-12-01", link: "illustration.html", type: "illustration" },
-  { title: "Magazine Layout", date: "2025-01-12", link: "publications.html", type: "publications" }
-];
-
-function renderCalendar(year, month) {
-  const container = document.getElementById('calendarBody');
-  const weekdays = document.getElementById('calendarWeekdays');
-
-  const daysInMonth = new Date(year, month + 1, 0).getDate();
-  const firstDay = new Date(year, month, 1).getDay();
-
-  const monthNames = ["January", "Fespanuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-  monthLabel.textContent = `${monthNames[month]} ${year}`;
-
-  container.innerHTML = '';
-
-  for (let i = 0; i < firstDay; i++) {
-    const blank = document.createElement('div');
-    blank.classList.add('calendar-day', 'blank');
-    container.appendChild(blank);
-  }
-
-  for (let day = 1; day <= daysInMonth; day++) {
-    const dateStr = `${year}-${(month + 1).toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
-    const dayBox = document.createElement('div');
-    dayBox.classList.add('calendar-day');
-    dayBox.textContent = day;
-
-    const today = new Date();
-    if (year === today.getFullYear() && month === today.getMonth() && day === today.getDate()) {
-      dayBox.classList.add('calendar-today');
-    }
-
-    projects.forEach(project => {
-      if (project.date === dateStr) {
-        const event = document.createElement('a');
-        event.classList.add('calendar-event', `type-${project.type}`);
-        event.href = project.link;
-        event.textContent = project.title;
-        dayBox.appendChild(event);
-      }
-    });
-
-    container.appendChild(dayBox);
-  }
-}
-
-renderCalendar(currentYear, currentMonth);
-</script>
+<script src="script.js"></script>
 </body>
 </html>

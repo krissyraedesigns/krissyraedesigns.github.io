@@ -1,0 +1,201 @@
+
+.ppt-toolbar {
+  background: #2a2a2a;
+  padding: 0.5rem 1rem;
+  border-bottom: 2px solid #333;
+  color: #ccc;
+}
+
+.ppt-layout {
+  display: flex;
+  height: 915px;
+  overflow: hidden;
+}
+
+.ppt-sidebar {
+  width: 20%;
+  background: #2b2b2b;
+  padding: 1rem;
+  overflow-y: auto;
+  border-right: 2px solid #333;
+  height: 950px;
+}
+
+.ppt-thumb {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: border 0.2s;
+}
+
+.ppt-thumb:hover,
+.ppt-thumb.selected {
+  border: 2px solid #888;
+}
+
+.ppt-slide-area {
+  width: 80%;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.ppt-slide {
+  display: none;
+}
+
+.ppt-slide.active {
+  display: block;
+}
+
+.ppt-body {
+  display: flex;
+  height: calc(950px - 150px); /* adjust this based on menu/tab height if needed */
+}
+.slide-panel {
+  width: 200px;
+  background: #222;
+  border-right: 1px solid #444;
+  padding: 1rem 0.5rem;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.slide-thumb {
+  height: 100px;
+  background: #333;
+  margin-bottom: 1rem;
+  border: 1px solid #555;
+  border-radius: 4px;
+}
+
+.slide-thumb.selected {
+  border: 2px solid #999;
+}
+
+/* Ensure ppt-content fills space and centers the image */
+.ppt-content {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #111;
+  padding: 2rem;
+}
+
+.ppt-content img {
+  max-width: 100%;
+  max-height: 60vh;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+  background: #222;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.fake-slide {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#1a1a1a, #222);
+  border-radius: 8px;
+  border: 1px solid #555;
+}
+
+.ppt-footer {
+  padding: 0.5rem 1rem;
+  background: #2a2a2a;
+  border-top: 1px solid #444;
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.ppt-notes {
+  background: #1e1e1e;
+  border-top: 1px solid #444;
+  padding: 0.75rem 1rem;
+  color: #aaa;
+  font-size: 0.85rem;
+  font-style: italic;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  box-shadow: inset 0 1px 0 #2d2d2d;
+}
+
+.double-panel-layout {
+  display: flex;
+  justify-content: space-between;
+  height: calc(950px - 150px);
+  position: relative;
+}
+
+.slide-panel {
+  width: 200px;
+  background: #1d1d1d;
+  border: 1px solid #444;
+  padding: 1rem 0.5rem;
+  overflow-y: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.left-panel {
+  border-right: 1px solid #444;
+}
+
+.right-panel {
+  border-left: 1px solid #444;
+}
+
+.panel-title {
+  color: #bbb;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #444;
+  text-align: center;
+  width: 100%;
+}
+
+.ppt-thumb {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: border 0.2s;
+}
+
+.ppt-thumb:hover,
+.ppt-thumb.selected {
+  border: 2px solid #888;
+}
+
+
+
+/* Notes Panel */
+.ppt-notes {
+  background: #1e1e1e;
+  border-top: 1px solid #444;
+  padding: 0.75rem 1rem;
+  color: #aaa;
+  font-size: 0.85rem;
+  font-style: italic;
+  height: 40px;
+  text-align: center;
+  box-shadow: inset 0 1px 0 #2d2d2d;
+}

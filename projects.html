@@ -5,50 +5,35 @@
 		<meta
 			name="viewport"
 			content="width=device-width, initial-scale=1.0" />
-		<title>Projects — Krissy Rae</title>
+		<title>Projects - KrissyRaeDesigns</title>
 		<link
 			href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap"
 			rel="stylesheet" />
-		<link
-			rel="stylesheet"
-			href="styles.css" />
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+		<link rel="stylesheet" href="styles.css" />
+    		<link rel="stylesheet" href="projects.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 	</head>
+
 	<body class="projects">
+
 		<nav class="taskbar">
 			<div class="taskbar-left">
-				<button
-					class="start-button"
-					id="startBtn">
-					<img
-						src="img/logo.png"
-						alt="Start Logo" />
+				<button class="start-button" id="startBtn">
+					<img src="img/logo.png" alt="Start Logo" />
 				</button>
-				<input
-					type="text"
-					placeholder="Search projects..."
-					class="taskbar-search" />
+				<input type="text" placeholder="Search projects..." class="taskbar-search" />
 			</div>
 
 			<div class="taskbar-right">
-				<div
-					class="taskbar-clock"
-					id="taskbarTime">
-					00:00
+				<div class="taskbar-clock" id="taskbarTime">00:00
 				</div>
-				<div
-					class="taskbar-date"
-					id="taskbarDate">
-					Jan 01
-				</div>
+				
+        <div class="taskbar-date" id="taskbarDate">Jan 01
+        </div>
 			</div>
 		</nav>
 
-		<div
-			class="start-menu"
-			id="startMenu">
+		<div class="start-menu" id="startMenu">
 			<ul>
 				<li>
 					<a href="index.html"><i class="fas fa-house"></i> Home</a>
@@ -70,18 +55,26 @@
 			</ul>
 		</div>
 
-		<div class="explorer-window">
-      <div class="explorer-controls">
-        <button class="explorer-btn minimize" title="Minimize"></button>
-        <button class="explorer-btn maximize" title="Maximize"></button>
-        <button class="explorer-btn close" title="Close"></button>
-      </div>
+<div class="frame">
+  <!-- Window Controls -->
+  <div class="window-bar">
+    <span class="title">File Explorer</span>
+    <div class="window-buttons">
+      <button class="win-btn minimize"></button>
+      <button class="win-btn maximize"></button>
+      <button class="win-btn close"></button>
+    </div>
+  </div>
 
-      <div class="explorer-header">
-        <span><i class="fas fa-folder"></i> Projects</span>
-        </div>
+  <!-- Menu Tabs -->
+  <div class="menu-tabs">
+    <span class="menu-tab active">File</span>
+    <span class="menu-tab">Home</span>
+    <span class="menu-tab">Share</span>
+    <span class="menu-tab">View</span>
+  </div>
 
-      <div class="explorer-toolbar">
+      <div class="window-toolbar">
         <button><i class="fas fa-arrow-left"></i></button>
         <button><i class="fas fa-arrow-right"></i></button>
         <button><i class="fas fa-arrow-up"></i></button>
@@ -91,12 +84,12 @@
             readonly />
       </div>
 
-        <div class="explorer-content">
+        <div class="window-content">
     <aside class="file-tree">
       <ul>
         <li data-filter="all" class="active">All Projects</li>
         <li data-filter="branding">Branding</li>
-        <li data-filter="Illustrations">Illustrations</li>
+        <li data-filter="illustrations">Illustrations</li>
         <li data-filter="publications">Publications</li>
         <li data-filter="advertising">Advertising</li>
         <!-- Add more categories as needed -->
@@ -142,7 +135,7 @@
     <div class="project-desc">Brand Identity Project</div>
   </a>
 
-  <a href="p!nkposter.html" class="gallery-item type-Illustrations">
+  <a href="p!nkposter.html" class="gallery-item type-illustrations">
     <span class="image-wrapper">
     <img class="primary-img" src="img/p!nkposter.webp" alt="p!nkposter" />
     <img class="secondary-img" src="img/pinkpixel.webp" alt="p!nkposter" />
@@ -158,6 +151,15 @@
     </span>
     <h3 class="project-title">Zoe's Animal Rescue</h3>
     <div class="project-desc">Market Research</div>
+  </a>
+
+   <a href="zoesanimalrescue.html" class="gallery-item type-illustrations">
+    <span class="image-wrapper">
+    <img class="primary-img" src="img/oolong32.webp" alt="oolongtea" />
+    <img class="secondary-img" src="img/oolongpixels.webp" alt="oolongteapixelated" />
+    </span>
+    <h3 class="project-title">Oolong Tea</h3>
+    <div class="project-desc">Illustrated Packaging</div>
   </a>
 </div>
 </div>
