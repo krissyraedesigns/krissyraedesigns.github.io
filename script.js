@@ -171,3 +171,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+
+  document.addEventListener('click', function (e) {
+    const isInsideFrame = e.target.closest('.frame');
+    const onProjectsPage = window.location.href.includes('projects.html');
+
+    if (!isInsideFrame && !onProjectsPage) {
+      window.location.href = 'projects.html';
+    }
+  });

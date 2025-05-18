@@ -68,7 +68,7 @@
 
 .about-container {
   display: flex;
-  flex-direction: row; /* Align items horizontally */
+  flex-direction: stretch; /* Align items horizontally */
   gap: 2rem; /* Add space between the two sections */
   width: 100%;
   max-width: 1200px; /* Optional: Limit the overall width */
@@ -100,4 +100,46 @@
   text-align: left; /* Align text to the left */
   font-family: 'DM Sans', sans-serif; /* Optional: Use a clean font */
   line-height: 1.6; /* Improve readability */
+}
+
+.small-space {
+
+padding: 10px 0;
+}
+
+.about-image-wrapper {
+  position: flex;
+  width: 300px; /* Adjust size */
+  height: 300px;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-left: 2rem; /* adjust spacing */
+  align-items: stretch;
+  max-width: 400px;
+}
+
+.about-img {
+  position: absolute;
+  top: 0;
+  left: 100px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.4s ease;
+}
+
+.secondary-img {
+  opacity: 0;
+  z-index: 1;
+}
+
+.about-image-wrapper:hover .secondary-img {
+  opacity: 1;
+}
+
+.about-image-wrapper:hover .primary-img {
+  opacity: 0;
 }
