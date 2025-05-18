@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Made With Love & Butter — Krissy Rae</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+   <link rel="stylesheet" href="casestudies.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="projects">
+
+<nav class="taskbar">
+  <div class="taskbar-left">
+    <button class="start-button" id="startBtn">
+      <img src="img/logo.png" alt="Start Logo" />
+    </button>
+    <input type="text" placeholder="Search projects..." class="taskbar-search" />
+  </div>
+
+  <div class="taskbar-right">
+    <div class="taskbar-clock" id="taskbarTime">00:00</div>
+    <div class="taskbar-date" id="taskbarDate">Jan 01</div>
+  </div>
+  </nav>
+
+<div class="start-menu" id="startMenu">
+  <ul>
+    <li><a href="index.html"><i class="fas fa-house"></i> Home</a></li>
+    <li><a href="bio.html"><i class="fas fa-user"></i> About</a></li>
+    <li><a href="projects.html"><i class="fas fa-folder-open"></i> Projects</a></li>
+    <li><a href="shop.html"><i class="fas fa-cart-shopping"></i> Shop</a></li>
+    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+  </ul>
+  </div>
+
+
+
+<!-- Calendar Modal -->
+<div id="calendarModal">
+  <div class="calendar-nav">
+    <button id="prevMonth">&lt;</button>
+    <h3 id="calendarMonth">Month</h3>
+    <button id="nextMonth">&gt;</button>
+  </div>
+  <div id="calendarWeekdays">
+    <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+  </div>
+  <div id="calendarBody"></div>
+</div>
+
+
+
+<div class="frame">
+  <!-- Window Controls -->
+  <div class="window-bar">
+    <span class="title">Made With Love & Butter Case Study</span>
+    <div class="window-buttons">
+      <button class="win-btn minimize"></button>
+      <button class="win-btn maximize"></button>
+      <button class="win-btn close"></button>
+    </div>
+  </div>
+
+  <!-- Menu Tabs -->
+  <div class="menu-tabs">
+    <span class="menu-tab active">Home</span>
+    <span class="menu-tab">Insert</span>
+    <span class="menu-tab">Design</span>
+    <span class="menu-tab">Animations</span>
+    <span class="menu-tab">Slide Show</span>
+    <span class="menu-tab">Review</span>
+    <span class="menu-tab">View</span>
+  </div>
+
+
+  <!-- Main Layout -->
+  <div class="ppt-body">
+    <aside class="slide-panel">
+<img src="img/wednesdayposter.gif"  class="ppt-thumb selected" data-image="img/wednesdayposter.gif"  data-note="<b>Isometric Poster - On wednesday we wear black</b><br><br>This animated isometric poster was inspired by the visual style and dark humor of the show Wednesday. Built entirely in Illustrator, the haunted mansion scene uses sharp geometric angles and moody contrast to create depth and atmosphere. The animation brings the scene to life with glowing lights and flickering shadows, timed to reveal the phrase “On Wednesday We Wear Black.” The design balances gothic charm with structured composition, making it both eerie and visually engaging.">
+
+
+
+
+    </aside>
+
+    <main class="ppt-content">
+ <img id="mainSlide" src="img/mwl1.webp" alt="Slide" />
+  </main>
+  </div>
+
+  <!-- Footer -->
+
+<div class="notes" id="slideNote">
+  This is the first slide's note.
+</div>
+
+  </div>
+
+
+
+
+<script src="script.js"></script>
+</body>
+</html>

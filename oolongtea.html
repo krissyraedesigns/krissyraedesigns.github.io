@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blue Rockies Silver Studio — Krissy Rae</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+   <link rel="stylesheet" href="casestudies.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="projects">
+
+<nav class="taskbar">
+  <div class="taskbar-left">
+    <button class="start-button" id="startBtn">
+      <img src="img/logo.png" alt="Start Logo" />
+    </button>
+    <input type="text" placeholder="Search projects..." class="taskbar-search" />
+  </div>
+
+  <div class="taskbar-right">
+    <div class="taskbar-clock" id="taskbarTime">00:00</div>
+    <div class="taskbar-date" id="taskbarDate">Jan 01</div>
+  </div>
+  </nav>
+
+<div class="start-menu" id="startMenu">
+  <ul>
+    <li><a href="index.html"><i class="fas fa-house"></i> Home</a></li>
+    <li><a href="bio.html"><i class="fas fa-user"></i> About</a></li>
+    <li><a href="projects.html"><i class="fas fa-folder-open"></i> Projects</a></li>
+    <li><a href="shop.html"><i class="fas fa-cart-shopping"></i> Shop</a></li>
+    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+  </ul>
+  </div>
+
+
+
+<!-- Calendar Modal -->
+<div id="calendarModal">
+  <div class="calendar-nav">
+    <button id="prevMonth">&lt;</button>
+    <h3 id="calendarMonth">Month</h3>
+    <button id="nextMonth">&gt;</button>
+  </div>
+  <div id="calendarWeekdays">
+    <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+  </div>
+  <div id="calendarBody"></div>
+</div>
+
+
+
+<div class="frame">
+  <!-- Window Controls -->
+  <div class="window-bar">
+    <span class="title">Blue Rockies Silver Studio Case Study</span>
+    <div class="window-buttons">
+      <button class="win-btn minimize"></button>
+      <button class="win-btn maximize"></button>
+      <button class="win-btn close"></button>
+    </div>
+  </div>
+
+  <!-- Menu Tabs -->
+  <div class="menu-tabs">
+    <span class="menu-tab active">Home</span>
+    <span class="menu-tab">Insert</span>
+    <span class="menu-tab">Design</span>
+    <span class="menu-tab">Animations</span>
+    <span class="menu-tab">Slide Show</span>
+    <span class="menu-tab">Review</span>
+    <span class="menu-tab">View</span>
+  </div>
+
+
+<div class="ppt-body double-panel-layout">
+  <!-- Left Side: brss -->
+  <aside class="slide-panel left-panel">
+    <h3 class="panel-title">Before</h3>
+<img src="img/oolong11.webp" class="ppt-thumb brss selected" data-image="img/oolong11.webp" data-note="<b>Cultural Influence & First Design</b><br><br>origins, I used red and yellow to symbolize good fortune and joy, and framed the logo with traditional Chinese patterns to reinforce authenticity. The first design successfully captured the right tone, but some visual elements — like the placement of the “10” and the barcode — disrupted the layout’s clarity and hierarchy.">
+ <img src="img/oolong12.webp" class="ppt-thumb brss" data-image="img/oolong12.webp" data-note="<b>Final Design and Key Learnings</b><br><br>In the updated version, I refined the design to improve readability and visual balance. I adjusted the size of the “10” to stop it from competing with the title, switched the body text to white for better contrast, and cropped the barcode to align more seamlessly. This process taught me how thoughtful tweaks in layout and contrast can elevate a design, and it reinforced the value of revisiting past work with a more critical, strategic eye.">
+
+  </aside>
+
+  <!-- Main Image Area -->
+  <main class="ppt-content">
+    <img id="mainSlide" src="img/brss1.webp" alt="Slide" />
+  </main>
+
+<!-- Right Side: brss -->
+<aside class="slide-panel right-panel">
+<h3 class="panel-title">After</h3>
+<img src="img/oolong31.webp" class="ppt-thumb brss" data-image="img/oolong31.webp" data-note="<b>Cultural Influence & First Design</b><br><br>origins, I used red and yellow to symbolize good fortune and joy, and framed the logo with traditional Chinese patterns to reinforce authenticity. The first design successfully captured the right tone, but some visual elements — like the placement of the “10” and the barcode — disrupted the layout’s clarity and hierarchy.">
+<img src="img/oolong32.webp" class="ppt-thumb brss" data-image="img/oolong32.webp" data-note="<b>Final Design and Key Learnings</b><br><br>In the updated version, I refined the design to improve readability and visual balance. I adjusted the size of the “10” to stop it from competing with the title, switched the body text to white for better contrast, and cropped the barcode to align more seamlessly. This process taught me how thoughtful tweaks in layout and contrast can elevate a design, and it reinforced the value of revisiting past work with a more critical, strategic eye.">
+</aside>
+</div>
+
+<!-- Notes Area -->
+<div class="notes" id="slideNote">This was the original concept...</div>
+
+
+
+
+<script src="script.js"></script>
+</body>
+</html>

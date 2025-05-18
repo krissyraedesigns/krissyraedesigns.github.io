@@ -8,6 +8,8 @@ const projects = [
   { title: "Made With Love & Butter", date: "2025-03-25", link: "madewithloveandbutter.html", type: "branding" },
   { title: "Zoe's Animal Rescue", date: "2025-05-13", link: "zoesanimalrescue.html", type: "advertising" },
     { title: "Oolong Tea", date: "2025-01-12", link: "oolongtea.html", type: "illustrations" },
+       { title: "Wednesday Poster", date: "2024-12-24", link: "wednesday.html", type: "illustrations" },
+
 ];
 
 // Toggle Start Menu
