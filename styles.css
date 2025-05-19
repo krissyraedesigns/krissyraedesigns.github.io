@@ -428,3 +428,42 @@ padding: 10px;
   /* Fix layout */
   display: block; /* change from flex to block */
 }
+
+.social-icons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.social-btn {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  border-radius: 50%;
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.social-btn:hover {
+  transform: scale(1.1);
+}
+
+.social-btn.instagram {
+  background-color: #fd1d1d; /* red tone for close */
+}
+
+.social-btn.facebook {
+  background-color: #fecd38; /* yellow tone for minimize */
+}
+
+.social-btn.behance {
+  background-color: #00c853; /* green tone for maximize */
+}
+
+.social-btn i {
+  font-size: 2em; /* or 2em, or whatever size you want */
+  line-height: 1;
+}
